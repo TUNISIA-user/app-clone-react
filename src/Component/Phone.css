@@ -1,0 +1,45 @@
+.Top__container__phone{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+
+}
+.myProfile{
+    font-size: small;
+}
+.container__phone{
+    background-color: #212529;
+    color: white;
+}
+
+
+.big__search{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.big__search > input {
+ 
+    width: 300px;
+ height: 24px
+}
+.search__bitg__search{
+    width: 306px;
+ 
+    background-color: rgb(103, 109, 98);
+    height: 440px;
+    position: absolute;
+    top: 110%;
+
+}
+.icon3{
+ 
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    
+
+}

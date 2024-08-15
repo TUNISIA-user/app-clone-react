@@ -1,0 +1,45 @@
+.Login__img{
+    margin-top: 100px;
+   width: 100px;
+ 
+ 
+}
+.Login__img img{ 
+    width: 100%;
+    border-radius: 100%;
+ }
+.container__Login__page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    gap: 70px;
+    align-items: center;
+    background-color: green;
+}
+.user__name{
+    background-color: rgb(187, 177, 177);
+    
+    
+}
+.user__name__icon{
+    background-color: aliceblue;
+    display: flex;
+    gap: 10px
+   
+}
+
+.user__name__phone{
+    background-color: rosybrown;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.buttonSave{
+    margin-top: 100px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

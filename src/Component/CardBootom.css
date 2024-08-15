@@ -1,0 +1,56 @@
+.container__card__data{
+    background-color: #4e4c4c;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    bottom: 70px;
+    left: 50px;
+    right: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+@media (min-width: 1025px) and (max-width: 2080px) {
+  
+  .container__card__data{
+    background-color: #4e4c4c;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+ 
+    border-radius: 10px;
+   text-align: center;
+     
+}
+  
+}
+
+
+/* .body__container__app__keyPad{
+    opacity: 0.2;
+} */
+
+
+ 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .container__card__data {
+    animation: fadeIn 1.3s ease-in-out;
+  }
+  *{
+    cursor: pointer;
+  }
