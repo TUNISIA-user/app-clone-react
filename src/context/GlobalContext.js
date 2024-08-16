@@ -1,4 +1,4 @@
-import { useReducer, createContext, useContext, useEffect, act } from "react";
+import { useReducer, createContext, useContext, useEffect} from "react";
 
 // Function to load state from localStorage
 const loadStateFromLocalStorage = () => {
@@ -59,10 +59,21 @@ const reducer = (state, action) => {
         Container : [...state.Container,action.payload]
       }
 }
+ 
+          case "COLSE__PER__ID":
+          const result__of_filter__array =   state.Container.filter( (item)=>  item.id !==action.payload) 
+        
+          return { 
+            ...state,
+            Container  :    result__of_filter__array  
+          }
 
-
-
-
+        case "CLOSE__ALL":
+          return {
+            ...state,
+            Container : []
+          }
+         
     default:
       return state;
   }

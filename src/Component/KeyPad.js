@@ -48,7 +48,9 @@ const Handel__Update = () => {
       type: "PUSH_IMG_WITH_ID",
       payload: {
         id: 1,
-        img: "/POINT/picture__1.png"
+        img: "/POINT/login.png"
+
+              
       }
     });
   }  
@@ -64,7 +66,7 @@ if(!res){
     type: "PUSH_IMG_WITH_ID2",
     payload: {
       id: 2,
-      img: "/POINT/picture__2.png"
+      img: "/POINT/pciture__1.png"
     }
   });
 } 

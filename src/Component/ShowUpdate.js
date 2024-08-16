@@ -3,11 +3,21 @@ import "./ShowUpdate.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Card__Swiper from './Card__Swiper';
-
+import { useGlobalContext } from '../context/GlobalContext';
 const ShowUpdate = () => {
     let date = new Date();
     let hours = date.getHours();   
     let minutes = date.getMinutes(); 
+    const Move  = useGlobalContext()
+         console.log(Move)
+ 
+         const close__all = ()=>{
+            Move.dispatch({
+                type : "CLOSE__ALL"
+            })
+         }
+
+ 
 
     return (
         <div className='container__app'>
@@ -26,24 +36,24 @@ const ShowUpdate = () => {
 
                 <div className='container__lvl2'>
                     <Swiper spaceBetween={30} slidesPerView={1}>
-                        <SwiperSlide>
-                         <Card__Swiper  img1="https://cdn.pixabay.com/photo/2015/08/03/13/58/whatsapp-873316_1280.png"   img2="/POINT/pciture__1.png" />
+ 
+                    {Move.Container.map( (item) => {
+                           return           <SwiperSlide>
+                                    <Card__Swiper id={item.id} img1="https://cdn.pixabay.com/photo/2015/08/03/13/58/whatsapp-873316_1280.png"   img2={item.img} />
+                               
+                                   </SwiperSlide>
 
-                        </SwiperSlide>
-                
-                        <SwiperSlide>
-                         <Card__Swiper img1="https://cdn.pixabay.com/photo/2015/08/03/13/58/whatsapp-873316_1280.png"    img2="/POINT/pciture__2.png" />
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                         <Card__Swiper  img1="https://cdn.pixabay.com/photo/2015/08/03/13/58/whatsapp-873316_1280.png" img2="/POINT/login.png" />
-
-                        </SwiperSlide>
-                
+         } )}
                     </Swiper>
+                 
+   
+                      
                 </div>
 
-                 <div className='coantiner__button__delte__every__thing'> Close all</div>
+              
+                 {Move.Container.length>0 &&   
+                     <div className='coantiner__button__delte__every__thing' onClick={close__all}> Close all</div>
+                       }
             </div>
         </div>
     );
