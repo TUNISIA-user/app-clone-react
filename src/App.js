@@ -4,7 +4,7 @@ import KeyPad from './Component/KeyPad';
 import LoginPage from './Component/LoginPage';
 import Phone from './Component/Phone';
 import Update from './Component/Update';
-
+                        
 const App = () => {
   return (
     <Routes>
