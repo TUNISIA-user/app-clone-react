@@ -85,6 +85,7 @@ const Update = () => {
           </span>
           <label className="label">Password</label>
         </div>
+        <br></br>
         <div className="forgot-pass">
           <a href="#">Forgot Password?</a>
         </div>

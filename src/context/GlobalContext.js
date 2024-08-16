@@ -3,7 +3,7 @@ import { useReducer, createContext, useContext, useEffect, act } from "react";
 // Function to load state from localStorage
 const loadStateFromLocalStorage = () => {
   const savedState = localStorage.getItem('globalState');
-  return savedState ? JSON.parse(savedState) : { name: null, Basket: [] };
+  return savedState ? JSON.parse(savedState) : { name: null, Basket: [],Container : [] };
 };
 
 // Function to save state to localStorage
@@ -45,7 +45,24 @@ const reducer = (state, action) => {
             ...state,
             Basket: res  // No need to spread state.Basket again; res already is the updated array
         };
-    
+  
+    case "PUSH_IMG_WITH_ID":{
+          return{
+            ...state,
+            Container : [...state.Container,action.payload]
+          }
+    }
+  
+    case "PUSH_IMG_WITH_ID2":{
+      return{
+        ...state,
+        Container : [...state.Container,action.payload]
+      }
+}
+
+
+
+
     default:
       return state;
   }
@@ -68,6 +85,7 @@ export const ContextProvider = ({ children }) => {
       value={{
         name: state.name,
         Basket: state.Basket,
+        Container : state.Container,
         dispatch,
       }}
     >

@@ -3,7 +3,9 @@ import "./KeyPad.css"
 import { Link } from 'react-router-dom'
 import CardBootmom from './CardBootmom'
 import "./CardBootom.css"
- import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useGlobalContext } from '../context/GlobalContext'
+
 const KeyPad = () => {
   const [data,setData] = useState("")
   const [open , setIsopen] = useState("none")
@@ -28,6 +30,47 @@ const goToContact =()=>{
 let date = new Date();
 let hours = date.getHours();   // Returns the hour (0-23)
 let minutes = date.getMinutes(); // Returns the minutes (0-59)
+
+
+
+const Move = useGlobalContext()
+ 
+
+const Handel__Update = () => {
+  console.log(Move.Container); // Log the current state of Container
+
+  // Find the item with id 1 in the Container array
+  const res = Move.Container.find((item) => item.id === 1);
+
+  if (!res) {
+    // If the item doesn't exist, dispatch the action to add it
+    Move.dispatch({
+      type: "PUSH_IMG_WITH_ID",
+      payload: {
+        id: 1,
+        img: "/POINT/picture__1.png"
+      }
+    });
+  }  
+};
+
+ 
+const Hand2 = () => {
+ 
+  console.log(Move)
+const res = Move.Container.find( (item) => item.id==2)
+if(!res){
+  Move.dispatch({
+    type: "PUSH_IMG_WITH_ID2",
+    payload: {
+      id: 2,
+      img: "/POINT/picture__2.png"
+    }
+  });
+} 
+}
+
+ 
   return (
     <> 
     <div className='body__container__app__keyPad'> 
@@ -105,9 +148,11 @@ let minutes = date.getMinutes(); // Returns the minutes (0-59)
         <button value={"*"} style={{borderRadius:"40px"}}   onClick={Handel}  >*</button>
         <button value={"0"} style={{borderRadius:"40px"}}  onClick={Handel}   >0</button>
         <button value={"#"} style={{borderRadius:"40px"}}  onClick={Handel} >#</button>
+                                       
        
+
         </div>
-        
+     
       </div>
     </div>
 
@@ -125,9 +170,9 @@ let minutes = date.getMinutes(); // Returns the minutes (0-59)
 
 
     <div className='container__lvl6' >
-      <Link to={"/Update"} style={{textDecoration:"none",color:"white"}}>Update</Link>
+      <Link to={"/Update"} style={{textDecoration:"none",color:"white"}} onClick={Handel__Update}>Update</Link>
       <Link to={"/"} style={{textDecoration:"none",color:"white"}}  >Recentes</Link>
-      <Link to={"/phone"} style={{textDecoration:"none",color:"white"}}>contacts</Link>
+      <Link to={"/phone"} style={{textDecoration:"none",color:"white"}}  onClick={Hand2} >contacts</Link>
       
     </div>
 
@@ -138,7 +183,8 @@ let minutes = date.getMinutes(); // Returns the minutes (0-59)
         
 
        <div className='conatiner__lvl8' style={{color:"white"}}>
-       <span class="material-symbols-outlined">menu</span>
+      
+       <Link to={"/ShowUpdate"}  style={{textDecoration:"none",color:"white"}}   >   <span class="material-symbols-outlined">menu</span> </Link>
        <span class="material-symbols-outlined">circle</span>
        <span class="material-symbols-outlined">arrow_back_ios</span>
 
