@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Cards.css" 
 import { useGlobalContext } from '../context/GlobalContext'
 import { useNavigate } from 'react-router-dom'
-const Cards = ({name,logored,numero}) => {
+const Cards = ({id,name,logored,numero}) => {
      const Nav = useNavigate()
     const [isopen,setisopen] = useState(false)
  
@@ -15,9 +15,27 @@ const Cards = ({name,logored,numero}) => {
    const removeItem = () => {
     Move.dispatch({
       type: 'REMOVE_ITEM_FROM_BASKET',
-      payload: numero,
+      payload__id: id,
     });
+    Move.dispatch({
+      type: 'REMOVE_ITEM_FROM_BASKET2',
+      numero: numero,
+    });
+
+     
   };
+
+
+
+
+
+
+  
+const call__function = ()=>{
+  console.log(id,name,logored,numero)
+}
+
+
 
   const Update__to = ()=>{
 Nav("/Update")
@@ -36,7 +54,7 @@ Nav("/Update")
         </div>
 
         <div className='container__call'>
-        <span class="material-symbols-outlined">call</span>
+        <span class="material-symbols-outlined" onClick={call__function}>call</span>
         <span class="material-symbols-outlined">chat_bubble</span>
         <span class="material-symbols-outlined"onClick={Update__to} >update</span>
         <span class="material-symbols-outlined"  onClick={removeItem} >remove</span>

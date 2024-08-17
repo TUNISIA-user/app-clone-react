@@ -3,7 +3,7 @@ import { useReducer, createContext, useContext, useEffect} from "react";
 // Function to load state from localStorage
 const loadStateFromLocalStorage = () => {
   const savedState = localStorage.getItem('globalState');
-  return savedState ? JSON.parse(savedState) : { name: null, Basket: [],Container : [] };
+  return savedState ? JSON.parse(savedState) : { name: null, Basket: [], Container: [], username: null  };
 };
 
 // Function to save state to localStorage
@@ -27,16 +27,38 @@ const reducer = (state, action) => {
        
       };
     case "REMOVE_ITEM_FROM_BASKET":
-      const result = state.Basket.filter(item => item.numero !== action.payload);
-      
+      const result = state.Basket.filter(item => item.id !== action.payload__id);
+       // here we gonna work temmeor
       return {
         ...state,
         Basket: result,
         
       };
+
+
+      case "REMOVE_ITEM_FROM_BASKET2":
+        const result2 = state.Basket.filter(item => item.numero !== action.numero);
+         // here we gonna work temmeor
+        return {
+          ...state,
+          Basket: result2,
+          
+        };
+  
+  
+
+
+
+
+
+
+
+
+
+
       case "UPDATE_USER":
         const res = state.Basket.map((item) =>
-            item.numero ===action.payload 
+            item.id ==action.get__payload 
                 ? { ...item, name: action.changeName } 
                 : item
         );
@@ -73,7 +95,11 @@ const reducer = (state, action) => {
             ...state,
             Container : []
           }
-         
+          case "SET_USER_FIRE_BASE":
+            return{
+              ...state,
+              username : action.payload
+            }         
     default:
       return state;
   }
@@ -97,6 +123,7 @@ export const ContextProvider = ({ children }) => {
         name: state.name,
         Basket: state.Basket,
         Container : state.Container,
+        username : state.username,
         dispatch,
       }}
     >

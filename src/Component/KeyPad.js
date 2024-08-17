@@ -186,8 +186,10 @@ if(!res){
 
        <div className='conatiner__lvl8' style={{color:"white"}}>
       
-       <Link to={"/ShowUpdate"}  style={{textDecoration:"none",color:"white"}}   >   <span class="material-symbols-outlined">menu</span> </Link>
-       <span class="material-symbols-outlined">circle</span>
+       <Link to={"/ShowUpdate"}  style={{textDecoration:"none",color:"white"}}    >   <span class="material-symbols-outlined">menu</span> </Link>
+ 
+       <Link to={"/login"}  style={{textDecoration:"none",color:"white"}}   >   <span class="material-symbols-outlined">circle</span> </Link>
+
        <span class="material-symbols-outlined">arrow_back_ios</span>
 
        </div>

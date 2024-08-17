@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Updata.css"
 import { useGlobalContext } from '../context/GlobalContext'
 import { Link } from 'react-router-dom'
@@ -6,16 +6,18 @@ const Update = () => {
       const Move =useGlobalContext ()
       const [data,setdata] = useState("")
       const [data2,setname] = useState("")
-
+ useEffect(()=>{console.log(Move)},[])
   const HandelUpdate = (event)=>{
  
    event.preventDefault();
    
     Move.dispatch({
         type : "UPDATE_USER",
-        payload : data,
+        get__payload : data,
         changeName:data2
     })
+    setdata("")
+    setname("")
     console.log(Move,"This State has been Changed" )
 
   }
@@ -33,10 +35,10 @@ const Update = () => {
                
         
          <div className="content">
-      <div className="text">Login</div>
+      <div className="text">Update</div>
       <form action="#">
         <div className="field">
-          <input required type="text" className="input"  onChange={(e)=>setdata(e.target.value)} />
+          <input required type="text" className="input"  onChange={(e)=>setdata(e.target.value)} value={data} />
           <span className="span">
             <svg
               xmlSpace="preserve"
@@ -61,7 +63,7 @@ const Update = () => {
           <label className="label">Numero</label>
         </div>
         <div className="field">
-          <input  type="text" className="input"  onChange={(e)=>setname(e.target.value)}  />
+          <input  type="text" className="input"  onChange={(e)=>setname(e.target.value)}  value={data2} />
           <span className="span">
             <svg
               xmlSpace="preserve"
@@ -106,6 +108,17 @@ const Update = () => {
     </div>
 
 
+      <div className='help__user_to__change__login'>
+         {Move.Basket.map( (item)=>
+           <div className='card__map'>
+             <h3> Id:  {item.id}</h3>
+             <h2> Numero :   {item.numero}</h2>
+             <h1>   Name :   {item.name}</h1>
+             <hr/>
+           </div>
+         
+         )}
+      </div>
 
 
     </div>

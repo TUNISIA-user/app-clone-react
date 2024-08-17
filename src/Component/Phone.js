@@ -10,7 +10,7 @@ const Phone = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [arr, setArr] = useState([]);
-
+  console.log(Move)
   const handleClick = () => {
     setIsOpen(prev => !prev);
   };
@@ -20,11 +20,25 @@ const Phone = () => {
       setArr([])
     }else{
       const filteredResults = Move.Basket.filter(item => item.name.toLowerCase().includes(input.toLowerCase()));
+  
       setArr(filteredResults);
       
     }
  
   }, [input, Move.Basket]);
+      
+  function getRandomString(length = 10) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters[randomIndex];
+    }
+    return result;
+}
+
+
+
 
   return (
     <>
@@ -40,7 +54,7 @@ const Phone = () => {
           </div>
         </div>
         <div className='myProfile'>
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>My Profile</Link>
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>Hello {Move.username.substr(0,Move.username.indexOf("@"))}</Link>
         </div>
         <br /><br />
         <div className='returnCards'>
@@ -60,7 +74,7 @@ const Phone = () => {
             
             <div className='search__bitg__search'>
             {arr.map(item => (
-              <Cards key={item.numero} name={item.name[0]} logored={item.name} numero={item.numero} />
+              <Cards id={item.id} name={item.name[0]} logored={item.name} numero={item.numero}  />
             ))}
           </div>
           

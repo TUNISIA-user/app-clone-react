@@ -63,7 +63,7 @@ const ShowUpdate = () => {
 
             
         </div>
-        <div className='coantienr__app__down' style={{color:"white"}}>
+        <div className='coantienr__app__down' style={{color:"black"}}>
       
       <Link to={"/"}  style={{textDecoration:"none",color:"black"}}   >   <span style={{color:"white"}} class="material-symbols-outlined">circle</span> </Link>
      
