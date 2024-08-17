@@ -54,7 +54,7 @@ const Phone = () => {
           </div>
         </div>
         <div className='myProfile'>
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>Hello {Move.username.substr(0,Move.username.indexOf("@"))}</Link>
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>Hello {Move.username?.substr(0,Move.username.indexOf("@"))}</Link>
         </div>
         <br /><br />
         <div className='returnCards'>

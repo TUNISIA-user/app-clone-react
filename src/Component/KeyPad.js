@@ -55,7 +55,7 @@ const Handel__Update = () => {
     });
   }  
 };
-
+// dont forget git push origin <name Branche> --force 
  
 const Hand2 = () => {
  
