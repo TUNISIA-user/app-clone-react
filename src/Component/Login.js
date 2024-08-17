@@ -20,7 +20,7 @@ const Login = () => {
                 console.log('User signed in:', userCredential.user);
                 setUserName("")
                 setPassword("")
-                Nav("/")
+                Nav("/login")
 
             })
             .catch((error) => {

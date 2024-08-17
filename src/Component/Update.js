@@ -97,9 +97,9 @@ const Update = () => {
       <div className='conatiner__lvl8' style={{color:"white"}}>
        <span class="material-symbols-outlined" style={{color:"black",fontSize:"27px"}}>menu</span>
  
-       <Link to={"/"} style={{textDecoration:"none",color:"black"}}>             <span class="material-symbols-outlined" style={{color:"black"}}>circle</span>       </Link>
+       <Link to={"/login"} style={{textDecoration:"none",color:"black"}}>             <span class="material-symbols-outlined" style={{color:"black"}}>circle</span>       </Link>
     
-        <Link to={"/"} style={{textDecoration:"none",color:"black"}}>     <span class="material-symbols-outlined" >arrow_back_ios</span></Link>
+        <Link to={"/login"} style={{textDecoration:"none",color:"black"}}>     <span class="material-symbols-outlined" >arrow_back_ios</span></Link>
        </div>
 
 

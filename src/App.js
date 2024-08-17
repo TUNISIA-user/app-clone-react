@@ -6,16 +6,17 @@ import Phone from './Component/Phone';
 import Update from './Component/Update';
 import ShowUpdate from './Component/ShowUpdate';
 import Login from './Component/Login';
-
+import Recenet from './Component/Recenet';
 const App = () => {
   return (
-    <Routes>
-      <Route path='/login' element={<Login/>}/>
-      <Route path="/" element={<KeyPad />} />
+    <Routes> 
+      <Route path='/' element={<Login/>}/>
+      <Route path="/login" element={<KeyPad />} />
       <Route path="/loginPage" element={<LoginPage />} />
       <Route path="/phone" element={<Phone />} />
       <Route path="/Update" element={<Update />} />
       <Route path='/ShowUpdate' element = {<ShowUpdate/>}/>
+      <Route path='/recent' element = {<Recenet/>}/>
    
       </Routes>
   );

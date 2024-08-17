@@ -173,8 +173,8 @@ if(!res){
 
     <div className='container__lvl6' >
       <Link to={"/Update"} style={{textDecoration:"none",color:"white"}} onClick={Handel__Update}>Update</Link>
-      <Link to={"/"} style={{textDecoration:"none",color:"white"}}  >Recentes</Link>
-      <Link to={"/phone"} style={{textDecoration:"none",color:"white"}}  onClick={Hand2} >contacts</Link>
+      <Link to={"/recent"} style={{textDecoration:"none",color:"white"}}  >Recentes</Link>
+      <Link to={"/loginPage"} style={{textDecoration:"none",color:"white"}}  onClick={Hand2} >contacts</Link>
       
     </div>
 
