@@ -11,6 +11,11 @@ const Phone = () => {
   const [input, setInput] = useState("");
   const [arr, setArr] = useState([]);
   const [items, setItems] = useState(Move.Basket);
+
+    useEffect(()=>{
+      setItems(Move.Basket)
+    },[Move.Basket])
+
 console.log(items)
   const handleClick = () => {
     setIsOpen(prev => !prev);
@@ -57,8 +62,8 @@ console.log(items)
           </div>
         </div>
         <div className='myProfile'>
-          <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
-            Hello {Move.username?.substr(0, Move.username.indexOf("@"))}
+          <Link to="/login" style={{ textDecoration: "none", color: "white" ,fontSize:"30px"}}>
+            Hello<span style={{color:"red",textTransform:"capitalize"}}> {Move.username?.substr(0, Move.username.indexOf("@"))}</span>
           </Link>
         </div>
         <br /><br />
@@ -92,7 +97,19 @@ console.log(items)
             )}
           </div>
         )}
+        
+
+         
+               
+                    <div className='login-get'>
+                    <Link to={"/login"}>
+                        <span className='material-symbols-outlined'>radio_button_unchecked</span>
+                    </Link>
+                </div>
+
+
       </div>
+      
     </>
   );
 };

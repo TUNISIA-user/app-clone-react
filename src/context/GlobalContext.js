@@ -3,7 +3,7 @@ import { useReducer, createContext, useContext, useEffect} from "react";
 // Function to load state from localStorage
 const loadStateFromLocalStorage = () => {
   const savedState = localStorage.getItem('globalState');
-  return savedState ? JSON.parse(savedState) : { name: null, Basket: [], Container: [], username: null  };
+  return savedState ? JSON.parse(savedState) : { name: null, Basket: [], Container: [], username: null  ,recente : []};
 };
 
 // Function to save state to localStorage
@@ -14,7 +14,16 @@ const saveStateToLocalStorage = (state) => {
 const initialState = loadStateFromLocalStorage();
 
 const reducer = (state, action) => {
+
+  
+
   switch (action.type) {
+ 
+
+
+
+
+
     case 'SET_NAME_USER':
       return {
         ...state,
@@ -100,6 +109,23 @@ const reducer = (state, action) => {
               ...state,
               username : action.payload
             }         
+
+
+            case "RECENT" : 
+            return{
+             ...state,
+             recente : [...state.recente,action.payload__data]
+            }
+            case "Update_RECENT" : 
+            const ResData =  state.recente.filter((item)=>item.id!==action.index) 
+            return{
+             ...state,
+             recente : ResData
+            }
+
+            
+
+            
     default:
       return state;
   }
@@ -124,6 +150,7 @@ export const ContextProvider = ({ children }) => {
         Basket: state.Basket,
         Container : state.Container,
         username : state.username,
+        recente : state.recente,
         dispatch,
       }}
     >

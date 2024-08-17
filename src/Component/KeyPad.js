@@ -30,7 +30,10 @@ const goToContact =()=>{
 let date = new Date();
 let hours = date.getHours();   // Returns the hour (0-23)
 let minutes = date.getMinutes(); // Returns the minutes (0-59)
-
+let dat__min = {
+  hours,
+  minutes
+}
 
 
 const Move = useGlobalContext()
@@ -72,6 +75,22 @@ if(!res){
 } 
 }
 
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+const Handel__react__component =()=>{
+  Move.dispatch({
+    type: "RECENT",
+    payload__data :  {
+      id: getRandomNumber(1,434),
+      number: data,
+      dat__min,
+    }
+  })
+  console.log(Move)
+}
  
   return (
     <> 
@@ -163,7 +182,7 @@ if(!res){
 {data &&
     <div className='container__lvl5'>
     <div className='container__lvl5__x3'><span class="material-symbols-outlined" onClick={goToContact}>contacts</span></div>
-    <div className='container__lvl5__x2'><span class="material-symbols-outlined" id='call'>call</span></div>
+    <div className='container__lvl5__x2'><span class="material-symbols-outlined" id='call' onClick={Handel__react__component} >call</span></div>
    
       <div className='container__lvl5__x1' onClick={Delete}  ><span class="material-symbols-outlined"  >backspace</span></div>
     
@@ -173,8 +192,9 @@ if(!res){
 
     <div className='container__lvl6' >
       <Link to={"/Update"} style={{textDecoration:"none",color:"white"}} onClick={Handel__Update}>Update</Link>
-      <Link to={"/recent"} style={{textDecoration:"none",color:"white"}}  >Recentes</Link>
-      <Link to={"/loginPage"} style={{textDecoration:"none",color:"white"}}  onClick={Hand2} >contacts</Link>
+      <Link to={"/recent"} style={{textDecoration:"none",color:"white"}}    >Recentes</Link>
+
+      <Link to={"/phone"} style={{textDecoration:"none",color:"white"}}  onClick={Hand2} >contacts</Link>
       
     </div>
 
