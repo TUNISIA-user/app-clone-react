@@ -22,7 +22,7 @@
     justify-content: space-around;
     font-size: 11.3px;
     font-family: sans-serif;
-
+   cursor:cell;
 }
 .login-get{
  
@@ -33,6 +33,9 @@
     left: 46%;
 }
 
+.x{
+    margin: 30px;
+}
 @media   (min-width: 750px) {
   
     .recent__container{

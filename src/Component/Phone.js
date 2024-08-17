@@ -10,35 +10,38 @@ const Phone = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [arr, setArr] = useState([]);
-  console.log(Move)
+  const [items, setItems] = useState(Move.Basket);
+console.log(items)
   const handleClick = () => {
     setIsOpen(prev => !prev);
   };
 
   useEffect(() => {
-    if(input.trim()==""){
-      setArr([])
-    }else{
-      const filteredResults = Move.Basket.filter(item => item.name.toLowerCase().includes(input.toLowerCase()));
-  
+    if (input.trim() === "") {
+      setArr([]);
+    } else {
+      const filteredResults = items.filter(item =>
+        item.name.toLowerCase().includes(input.toLowerCase())
+      );
       setArr(filteredResults);
-      
     }
- 
-  }, [input, Move.Basket]);
-      
-  function getRandomString(length = 10) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?';
-    let result = '';
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        result += characters[randomIndex];
-    }
-    return result;
-}
+  }, [input, items]);
 
+  const handleDragStart = (e, index) => {
+    e.dataTransfer.setData('draggedItemIndex', index);
+  };
 
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
 
+  const handleDrop = (e, dropIndex) => {
+    const draggedIndex = e.dataTransfer.getData('draggedItemIndex');
+    const updatedItems = [...items];
+    const [draggedItem] = updatedItems.splice(draggedIndex, 1);
+    updatedItems.splice(dropIndex, 0, draggedItem);
+    setItems(updatedItems);
+  };
 
   return (
     <>
@@ -54,15 +57,25 @@ const Phone = () => {
           </div>
         </div>
         <div className='myProfile'>
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>Hello {Move.username?.substr(0,Move.username.indexOf("@"))}</Link>
+          <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+            Hello {Move.username?.substr(0, Move.username.indexOf("@"))}
+          </Link>
         </div>
         <br /><br />
         <div className='returnCards'>
-          {Move.Basket.map(item => (
-            <Cards key={item.numero} name={item.name[0]} logored={item.name} numero={item.numero} />
+          {items.map((item, index) => (
+            <div
+              key={item.numero}
+              draggable
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragOver={handleDragOver}
+              onDrop={(e) => handleDrop(e, index)}
+            >
+              <Cards name={item.name[0]} logored={item.name} numero={item.numero} />
+            </div>
           ))}
         </div>
-        {isOpen && Move.Basket.length > 0  && (
+        {isOpen && items.length > 0 && (
           <div className='big__search'>
             <input
               type='text'
@@ -70,20 +83,18 @@ const Phone = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
-            {arr.length>0 && 
-            
-            <div className='search__bitg__search'>
-            {arr.map(item => (
-              <Cards id={item.id} name={item.name[0]} logored={item.name} numero={item.numero}  />
-            ))}
-          </div>
-          
-            }
+            {arr.length > 0 && (
+              <div className='search__bitg__search'>
+                {arr.map(item => (
+                  <Cards key={item.numero} name={item.name[0]} logored={item.name} numero={item.numero} />
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>
     </>
   );
-}
+};
 
 export default Phone;

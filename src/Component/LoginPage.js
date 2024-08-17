@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./LoginPage.css"
 import { useGlobalContext } from '../context/GlobalContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const LoginPage = () => {
     const Move = useGlobalContext ()
     const Nav = useNavigate()
@@ -59,10 +59,15 @@ const LoginPage = () => {
           <button onClick={HandelButton}> Save </button>
         </form>
         <div className="form-section">
-          <p>Have an account? <a href="">Log in</a></p>
+          <p>Have an account? <Link to={"/"}>Log in</Link></p>
+          
         </div>
       </div>
-  
+      <div className='login-get'>
+                    <Link to={"/login"}>
+                        <span className='material-symbols-outlined'>radio_button_unchecked</span>
+                    </Link>
+                </div>
       </div>   
 
 

@@ -21,8 +21,7 @@ const Cards = ({id,name,logored,numero}) => {
       type: 'REMOVE_ITEM_FROM_BASKET2',
       numero: numero,
     });
-
-     
+ 
   };
 
 

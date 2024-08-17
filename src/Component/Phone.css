@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     font-weight: 900;
-
+    cursor: cell;
 }
 .myProfile{
     font-size: small;
