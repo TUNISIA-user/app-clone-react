@@ -100,14 +100,14 @@ const Handel__react__component =()=>{
 
     <div className='container__lvl1'>
         <div className='container__lvl1__icon1'>
-            <span>{hours} : {minutes}</span>
+            <span className='low__batteary'>{hours} : {minutes}</span>
             <span class="material-symbols-outlined">image</span>
                                               
         </div>
         <div className='container__lvl1__icon2'>   
             <span class="material-symbols-outlined">flight</span>
-            <span>20%</span>
-        <span class="material-symbols-outlined">battery_5_bar</span>
+            <span className='low__batteary'>20%</span>
+        <span class="material-symbols-outlined" >battery_5_bar</span>
       
         </div>
     </div>
@@ -131,9 +131,10 @@ const Handel__react__component =()=>{
     <input 
   type="text" 
   style={data.length >= 8   ? { color: "green", background: "black", fontFamily: "sans-serif", fontSize: "35px" } 
-    : { color: "red" , background: "black", fontFamily: "sans-serif",fontSize:"35px"}} 
+    : { color: "red" ,   fontFamily: "cursive",fontSize:"35px"}} 
   id="container__lvl3__search" 
   value={data}
+  
 />
    
     </div>

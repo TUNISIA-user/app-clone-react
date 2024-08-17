@@ -127,7 +127,8 @@
 }
 
 .app__container{
- background-color: #24292e;
+  background: rgb(1,3,6);
+  background: linear-gradient(90deg, rgba(1,3,6,1) 5%, rgba(24,24,163,1) 49%, rgba(3,13,28,1) 96%);
 }
 
 .help__user_to__change__login{
@@ -143,3 +144,27 @@
   flex-direction: column;
   margin: 10px;
 }
+
+
+@media (max-width: 880px)  {
+  
+  .app__container{
+    background: rgb(1,3,6);
+    background: linear-gradient(90deg, rgba(1,3,6,1) 5%, rgba(24,24,163,1) 49%, rgba(3,13,28,1) 96%);
+    display: flex;
+    flex-direction: column;
+ 
+    
+  }
+  .help__user_to__change__login{
+    width: 80%;
+    height: 100px;
+    overflow-x: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+  }
+  
+}
+ 

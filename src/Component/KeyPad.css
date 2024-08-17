@@ -178,3 +178,21 @@ padding: 2px;
     
     }
 }
+
+.container__lvl3 input{
+    background: rgb(1,3,6);
+    background: linear-gradient(90deg, rgba(1,3,6,1) 24%, rgba(24,24,163,1) 53%, rgba(3,13,28,1) 84%);
+   width:200px;
+}
+.low__batteary{
+    font-family:cursive
+}
+
+ 
+.container__lvl4__number button{
+    font-family: cursive;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

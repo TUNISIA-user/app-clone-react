@@ -7,8 +7,8 @@ const LoginPage = () => {
     const Nav = useNavigate()
     const [name,setname] = useState("") 
 
-    function getRandomString(length = 10) {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+    function getRandomString(length = 8) {
+        const characters = 'ABCJHDE123131H23U12NE12EK91K2141J41IJ1';
         let result = '';
         for (let i = 0; i < length; i++) {
             const randomIndex = Math.floor(Math.random() * characters.length);
