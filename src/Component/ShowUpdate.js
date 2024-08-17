@@ -67,7 +67,7 @@ const ShowUpdate = () => {
       
       <Link to={"/"}  style={{textDecoration:"none",color:"black"}}   >   <span style={{color:"white"}} class="material-symbols-outlined">circle</span> </Link>
      
-
+      <Link to={"/login"}  style={{textDecoration:"none",color:"black"}}   >   <span style={{color:"white"}} class="material-symbols-outlined">arrow_back_ios</span> </Link>
       </div>
 
 

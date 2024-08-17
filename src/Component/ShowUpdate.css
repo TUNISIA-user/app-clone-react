@@ -6,14 +6,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+           
  }
 
  .container__app_phone{
     /* background-color: rgb(168, 161, 161); */
     width: 90%;
     height: 600px;
-
+ 
  }
  .container__lvl2{
     /* background-color: red; */
@@ -40,7 +40,6 @@
     position: absolute;
     top: 3.9%;
     left: 50%;
-    
     transform: translate(-50%, -50%)
 
     
@@ -80,4 +79,95 @@
     justify-content: space-around;
     background-color: #01010C
 }
+           
+@media   (min-width: 750px) {
  
+    .container__app{
+        background-color: #01010C;
+        width: 40%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+     }
+    
+     .container__app_phone{
+        /* background-color: rgb(168, 161, 161); */
+        width: 50%;
+        height: 600px;
+    
+        
+     }
+     .container__lvl2{
+        /* background-color: red; */
+        margin-top: 10px;
+        width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        
+    }
+     .siwp  img{
+        width: 100%;
+        border-radius: 30px;
+        margin-left: auto;
+    
+     }
+     
+    .siwper-logo{
+        width: 30px;
+        height: 30px;
+        background-color: rgb(81, 97, 44);
+        border-radius: 100%;
+        position: absolute;
+        top: 3.9%;
+        left: 50%;
+        
+        transform: translate(-50%, -50%)
+    
+        
+    }
+     
+ 
+      .container__lvl2{
+           
+            margin-top: 40px;
+            width: 96%;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        
+    }  
+    
+    .coantiner__button__delte__every__thing{
+        background-color: rgb(34, 30, 30);
+        margin-top: 10px;
+        width: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        color: gray;
+        font-family: sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .coantienr__app__down{
+     
+        display: flex;
+        justify-content: space-around;
+        background-color: #01010C;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+     
+}
