@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Card__Swiper from './Card__Swiper';
 import { useGlobalContext } from '../context/GlobalContext';
+import { Link } from 'react-router-dom';
 const ShowUpdate = () => {
     let date = new Date();
     let hours = date.getHours();   
@@ -19,7 +20,11 @@ const ShowUpdate = () => {
 
  
 
+
     return (
+        <>
+        
+ 
         <div className='container__app'>
             <div className='container__app_phone'>
                 <div className='container__lvl1'>
@@ -55,7 +60,18 @@ const ShowUpdate = () => {
                      <div className='coantiner__button__delte__every__thing' onClick={close__all}> Close all</div>
                        }
             </div>
+
+            
         </div>
+        <div className='coantienr__app__down' style={{color:"white"}}>
+      
+      <Link to={"/"}  style={{textDecoration:"none",color:"black"}}   >   <span style={{color:"white"}} class="material-symbols-outlined">circle</span> </Link>
+     
+
+      </div>
+
+
+          </>
     );
 }
 

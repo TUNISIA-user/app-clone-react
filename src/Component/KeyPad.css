@@ -41,7 +41,7 @@ padding: 2px;
 
 .container__lvl2{
     margin-top: 6px;
-    
+    /* background-color: #090947;  */
     display: flex;
     justify-content: flex-end;
     gap: 10px;
