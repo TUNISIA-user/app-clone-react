@@ -5,7 +5,7 @@ const loadStateFromLocalStorage = () => {
   const savedState = localStorage.getItem('globalState');
   return savedState ? JSON.parse(savedState) : { name: null, Basket: [] };
 };
-
+                
 // Function to save state to localStorage
 const saveStateToLocalStorage = (state) => {
   localStorage.setItem('globalState', JSON.stringify(state));
