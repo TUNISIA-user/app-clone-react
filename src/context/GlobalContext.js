@@ -5,7 +5,8 @@ const loadStateFromLocalStorage = () => {
   const savedState = localStorage.getItem('globalState');
   return savedState ? JSON.parse(savedState) : { name: null, Basket: [], Container: [], username: null  ,recente : []};
 };
-
+// add reducer function to app sotre this dat and 
+// { name: null, Basket: [], Container: [], username: null  ,recente : [] , newStore : [] } 
 // Function to save state to localStorage
 const saveStateToLocalStorage = (state) => {
   localStorage.setItem('globalState', JSON.stringify(state));
