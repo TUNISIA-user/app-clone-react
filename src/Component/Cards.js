@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import "./Cards.css" 
 import { useGlobalContext } from '../context/GlobalContext'
 import { useNavigate } from 'react-router-dom'
+
+// @ founder nahdi ghaith
 const Cards = ({name,logored,numero}) => {
      const Nav = useNavigate()
     const [isopen,setisopen] = useState(false)
