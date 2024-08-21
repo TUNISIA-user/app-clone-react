@@ -12,6 +12,7 @@ const App = () => {
       <Route path="/loginPage" element={<LoginPage />} />
       <Route path="/phone" element={<Phone />} />
       <Route path="/Update" element={<Update />} />
+      <Route path="/*" element={<p> not found hee <p/>} />
       </Routes>
   );
 };
