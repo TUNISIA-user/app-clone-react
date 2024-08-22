@@ -3,6 +3,7 @@ import "./Updata.css"
 import { useGlobalContext } from '../context/GlobalContext'
 import { Link } from 'react-router-dom'
 const Update = () => {
+      // use global Context here to   share data with all compoenent 
       const Move =useGlobalContext ()
       const [data,setdata] = useState("")
       const [data2,setname] = useState("")
